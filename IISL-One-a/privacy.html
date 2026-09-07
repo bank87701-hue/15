@@ -1,189 +1,398 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <script>
-        const BASE_URL = 'https://yeapkia.xyz';
-        const SAFE_COLOR = '#eee';
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <script>
-        !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e=e||self).uni=n()}(this,(function(){"use strict";try{var e={};Object.defineProperty(e,"passive",{get:function(){!0}}),window.addEventListener("test-passive",null,e)}catch(e){}var n=Object.prototype.hasOwnProperty;function i(e,i){return n.call(e,i)}var t=[];function o(){return window.__dcloud_weex_postMessage||window.__dcloud_weex_}function a(){return window.__uniapp_x_postMessage||window.__uniapp_x_}var r=function(e,n){var i={options:{timestamp:+new Date},name:e,arg:n};if(a()){if("postMessage"===e){var r={data:n};return window.__uniapp_x_postMessage?window.__uniapp_x_postMessage(r):window.__uniapp_x_.postMessage(JSON.stringify(r))}var d={type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}};window.__uniapp_x_postMessage?window.__uniapp_x_postMessageToService(d):window.__uniapp_x_.postMessageToService(JSON.stringify(d))}else if(o()){if("postMessage"===e){var s={data:[n]};return window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessage(s):window.__dcloud_weex_.postMessage(JSON.stringify(s))}var w={type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}};window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessageToService(w):window.__dcloud_weex_.postMessageToService(JSON.stringify(w))}else{if(!window.plus)return window.parent.postMessage({type:"WEB_INVOKE_APPSERVICE",data:i,pageId:""},"*");if(0===t.length){var u=plus.webview.currentWebview();if(!u)throw new Error("plus.webview.currentWebview() is undefined");var g=u.parent(),v="";v=g?g.id:u.id,t.push(v)}if(plus.webview.getWebviewById("__uniapp__service"))plus.webview.postMessageToUniNView({type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}},"__uniapp__service");else{var c=JSON.stringify(i);plus.webview.getLaunchWebview().evalJS('UniPlusBridge.subscribeHandler("'.concat("WEB_INVOKE_APPSERVICE",'",').concat(c,",").concat(JSON.stringify(t),");"))}}},d={navigateTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("navigateTo",{url:encodeURI(n)})},navigateBack:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.delta;r("navigateBack",{delta:parseInt(n)||1})},switchTab:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("switchTab",{url:encodeURI(n)})},reLaunch:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("reLaunch",{url:encodeURI(n)})},redirectTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("redirectTo",{url:encodeURI(n)})},getEnv:function(e){a()?e({uvue:!0}):o()?e({nvue:!0}):window.plus?e({plus:!0}):e({h5:!0})},postMessage:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};r("postMessage",e.data||{})}},s=/uni-app/i.test(navigator.userAgent),w=/Html5Plus/i.test(navigator.userAgent),u=/complete|loaded|interactive/;var g=window.my&&navigator.userAgent.indexOf(["t","n","e","i","l","C","y","a","p","i","l","A"].reverse().join(""))>-1;var v=window.swan&&window.swan.webView&&/swan/i.test(navigator.userAgent);var c=window.qq&&window.qq.miniProgram&&/QQ/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var p=window.tt&&window.tt.miniProgram&&/toutiaomicroapp/i.test(navigator.userAgent);var _=window.wx&&window.wx.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var m=window.qa&&/quickapp/i.test(navigator.userAgent);var f=window.ks&&window.ks.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var l=window.tt&&window.tt.miniProgram&&/Lark|Feishu/i.test(navigator.userAgent);var E=window.jd&&window.jd.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var x=window.xhs&&window.xhs.miniProgram&&/xhsminiapp/i.test(navigator.userAgent);for(var S,h=function(){window.UniAppJSBridge=!0,document.dispatchEvent(new CustomEvent("UniAppJSBridgeReady",{bubbles:!0,cancelable:!0}))},y=[function(e){if(s||w)return window.__uniapp_x_postMessage||window.__uniapp_x_||window.__dcloud_weex_postMessage||window.__dcloud_weex_?document.addEventListener("DOMContentLoaded",e):window.plus&&u.test(document.readyState)?setTimeout(e,0):document.addEventListener("plusready",e),d},function(e){if(_)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.wx.miniProgram},function(e){if(c)return window.QQJSBridge&&window.QQJSBridge.invoke?setTimeout(e,0):document.addEventListener("QQJSBridgeReady",e),window.qq.miniProgram},function(e){if(g){document.addEventListener("DOMContentLoaded",e);var n=window.my;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(v)return document.addEventListener("DOMContentLoaded",e),window.swan.webView},function(e){if(p)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(m){window.QaJSBridge&&window.QaJSBridge.invoke?setTimeout(e,0):document.addEventListener("QaJSBridgeReady",e);var n=window.qa;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(f)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.ks.miniProgram},function(e){if(l)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(E)return window.JDJSBridgeReady&&window.JDJSBridgeReady.invoke?setTimeout(e,0):document.addEventListener("JDJSBridgeReady",e),window.jd.miniProgram},function(e){if(x)return window.xhs.miniProgram},function(e){return document.addEventListener("DOMContentLoaded",e),d}],M=0;M<y.length&&!(S=y[M](h));M++);S||(S={});var P="undefined"!=typeof uni?uni:{};if(!P.navigateTo)for(var b in S)i(S,b)&&(P[b]=S[b]);return P.webView=S,P}));
-    </script>
-    <style>
-        body {padding: 0;margin: 0;height: 100vh;}
-        .page {height: 100%;display: flex;flex-direction: column;background-color: #eee;}
-        .icon {display: flex;justify-content: center;}
-        .icon img {border-radius: 10px;width: 128px;height: 128px;}
-        .content {background-color: #fff;border-radius: 4px;padding: 4px;margin: 0 20px;border: 1px solid #ddd;display: flex;flex-direction: column;overflow-y: scroll;}
-        .btn {height: 40px;line-height: 40px;border-radius: 4px;padding: 0 20px;background-color: #fff;border: 1px solid #ddd;font-family: PingFangSC-Regular, sans-serif;}
-        .content .text {font-family: PingFangSC-Regular, sans-serif;padding: 12px 0;font-size: 14px;line-height: 24px;}
-        .content .text + .text {padding-top: 0;}
-        .loader {position: relative;width: 2.5em;height: 2.5em;transform: rotate(165deg)}
-        .loader:before, .loader:after {content: "";position: absolute;top: 50%;left: 50%;display: block;width: 0.5em;height: 0.5em;border-radius: 0.25em;transform: translate(-50%, -50%)}
-        .loader:before {animation: before 2s infinite}
-        .loader:after {animation: after 2s infinite}
-        .app_loader {display: flex;justify-content: center;align-items: center;}
-        @keyframes before {
-            0% {width: 0.5em;box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75)}
-            35% {width: 2.5em;box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75)}
-            70% {width: 0.5em;box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75)}
-            100% {box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75)}
-        }
-        @keyframes after {
-            0% {height: 0.5em;box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75)}
-            35% {height: 2.5em;box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75)}
-            70% {height: 0.5em;box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75)}
-            100% {box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75)}
-        }
-    </style>
+<script>const pageInfo = {"name":"IISL One","identifier":"com.furniturestudiollc.mathex","status":"disabled","icon":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gNjAK/9sAQwANCQoLCggNCwoLDg4NDxMgFRMSEhMnHB4XIC4pMTAuKS0sMzpKPjM2RjcsLUBXQUZMTlJTUjI+WmFaUGBKUVJP/9sAQwEODg4TERMmFRUmTzUtNU9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09P/8AAEQgAQABAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A9OooooAKKilnjhGZGC54Hqfp60iTlxuEbKvXc+AMUuZXsOzJc0tMU55Bzmn0xCUtN/jp1ABTJZPLjLYyegHqaUtg0yQ8b9udvOKmT00GiGG2w/nTHfKe56D2FSzRLNC0UmSrDBwcU1ZiyuwjOE9+tILlSrsQVVTjJ7moUoJWK964+KJY41jQHCjAyeac29eV+Yd1P9KiFwVXe8Lqp6HinvOUbbsJOQBz1p80UhWdx6YYbh3p9NUYz706tESIQDTJvlgkI7KT+lSUyVPMiaPcVDDGR1pPYaM7S7s3WmTzn+836AU3S5he6e8hYKTKQp9+KnstNitLOS1gll8tic5wSM9e1Ng0i3gszaLJKYi4f72CCDnqPpXNGlL3b9E0aucdbdyrcX1zpzD7bGHt2bG8cgVNe3OzWrW3/wCegB/nVmawS4CLcyySxowYI2MEjpnA5qO50yOe/jvWmkWSIYTGMD9Peh0pJWT0ug543uy8WVWVScFug9adVOC1H2r7W00sjbSi7iMAZHQD6Vcrpi2zJhRRRTEMZcnKna3rSHzdhA2hscMOQD9KkopWArec8Uaq6PJIBztQgE01UuLg5nAij/uA5Y/U9vwq3RS5b7juIAAMDgClooqhH//Z","privacy_confirm_url":"https://dnbadjgkaffa32423.xyz/","ip_filter":"VPS,Google LLC,Google,Google,Google Cloud,Amazon,Microsoft Corporation","ip_whitelist":"","device_whitelist":""};</script><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>IISL One — Privacy Confirmation</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f5f7fa;--bg3:#eef1f6;
+  --text:#1a1a2e;--text2:#4a4a6a;--text3:#8888a0;
+  --accent:#4f6ef7;--accent2:#3a56d4;
+  --border:#e0e4ee;--card:#ffffff;--shadow:0 2px 16px rgba(0,0,0,.07);
+  --radius:14px;--radius2:10px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0e0e18;--bg2:#16162a;--bg3:#1e1e38;
+    --text:#eaeaff;--text2:#b0b0cc;--text3:#7878a0;
+    --accent:#6b8cff;--accent2:#8aa4ff;
+    --border:#2a2a4a;--card:#1a1a32;--shadow:0 2px 20px rgba(0,0,0,.35);
+  }
+}
+html{font-size:15px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.65;
+  min-height:100dvh;min-height:100vh;overflow-x:hidden;
+  display:flex;flex-direction:column;
+}
+
+/* ── Loading ── */
+#loading{
+  position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;background:var(--bg);
+  transition:opacity .4s ease;
+}
+#loading.hide{opacity:0;pointer-events:none}
+.spinner{
+  width:44px;height:44px;border:3px solid var(--border);
+  border-top-color:var(--accent);border-radius:50%;
+  animation:spin .75s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loading p{margin-top:18px;color:var(--text3);font-size:.9rem;letter-spacing:.02em}
+
+/* ── Error ── */
+#error{
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100dvh;padding:32px;text-align:center;
+}
+#error.show{display:flex}
+#error .icon{font-size:48px;margin-bottom:16px}
+#error h2{font-size:1.15rem;color:var(--text);margin-bottom:8px}
+#error p{font-size:.88rem;color:var(--text2);max-width:320px}
+
+/* ── App header ── */
+.app-header{
+  display:flex;align-items:center;gap:14px;
+  padding:28px 20px 22px;
+}
+.app-icon{
+  width:56px;height:56px;border-radius:14px;
+  object-fit:cover;flex-shrink:0;
+  background:var(--bg3);box-shadow:var(--shadow);
+}
+.app-meta h1{font-size:1.12rem;font-weight:700;color:var(--text);line-height:1.3}
+.app-meta span{font-size:.78rem;color:var(--text3);letter-spacing:.03em}
+
+/* ── Content ── */
+#content{display:none;flex-direction:column;flex:1;padding:0 16px 110px}
+#content.show{display:flex}
+
+.policy-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:22px 20px;margin-bottom:14px;
+}
+.policy-card h2{
+  font-size:1rem;font-weight:700;color:var(--accent);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.policy-card h2 .num{
+  background:var(--accent);color:#fff;font-size:.7rem;
+  width:22px;height:22px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.policy-card h3{
+  font-size:.85rem;font-weight:600;color:var(--text);
+  margin:14px 0 6px;
+}
+.policy-card p,.policy-card li{
+  font-size:.84rem;color:var(--text2);line-height:1.72;
+}
+.policy-card ul{padding-left:18px;margin:6px 0}
+.policy-card li{margin-bottom:4px}
+.policy-card li::marker{color:var(--accent)}
+.divider{height:1px;background:var(--border);margin:16px 0}
+.badge{
+  display:inline-block;background:var(--bg3);color:var(--text3);
+  font-size:.72rem;padding:3px 9px;border-radius:20px;margin-right:5px;margin-bottom:5px;
+}
+
+/* ── Bottom bar ── */
+.bottom-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--bg);border-top:1px solid var(--border);
+  padding:14px 20px;padding-bottom:max(14px,env(safe-area-inset-bottom));
+  display:flex;align-items:center;gap:12px;
+  z-index:100;
+}
+.bottom-bar .info{flex:1;font-size:.76rem;color:var(--text3);line-height:1.4}
+.bottom-bar .info strong{color:var(--text)}
+.btn-confirm{
+  background:var(--accent);color:#fff;border:none;
+  padding:13px 32px;border-radius:var(--radius2);
+  font-size:.92rem;font-weight:600;cursor:pointer;
+  transition:background .2s,transform .1s;
+  box-shadow:0 4px 14px rgba(79,110,247,.3);
+}
+.btn-confirm:active{transform:scale(.97);background:var(--accent2)}
+</style>
 </head>
 <body>
-    <div class="page">
-        <div style="height: min(30vw, 30vh)"></div>
-        <div style="flex: 1"></div>
-        <div class="app_loader"><div class="loader"></div></div>
-        <div style="height: min(20vw, 20vh)"></div>
-        <div style="height: min(30vw, 30vh)"></div>
+
+<!-- Loading -->
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Verifying privacy confirmation…</p>
+</div>
+
+<!-- Error -->
+<div id="error">
+  <div class="icon">⚠️</div>
+  <h2>Invalid Environment</h2>
+  <p>This page must be opened within the official IISL One application WebView. Using it outside this context is unsupported.</p>
+</div>
+
+<!-- Main Content -->
+<div id="content">
+  <div class="app-header">
+    <img class="app-icon" id="appIcon" src="" alt="App Icon">
+    <div class="app-meta">
+      <h1 id="appName"></h1>
+      <span id="bundleId"></span>
     </div>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">1</span>Information We Collect</h2>
+    <p>We collect information to provide better services to our users. The categories of information we collect include:</p>
+    <h3>a) Information You Provide Directly</h3>
+    <ul>
+      <li>Account registration details (email address, username, password)</li>
+      <li>Profile information (display name, avatar, bio)</li>
+      <li>Communication data (messages, comments, feedback, support requests)</li>
+      <li>Payment and billing information processed through secure third-party providers</li>
+      <li>Content you upload, create, or share within the Application</li>
+    </ul>
+    <h3>b) Information Collected Automatically</h3>
+    <ul>
+      <li>Device information (device model, operating system version, unique device identifiers)</li>
+      <li>Log data (IP address, access times, pages viewed, referral URLs, crash reports)</li>
+      <li>Usage data (features accessed, interaction patterns, session duration, in-app actions)</li>
+      <li>Location data (approximate geographic location derived from IP address; precise location only with your explicit consent where required by law)</li>
+      <li>Cookie and similar tracking technologies for functionality, analytics, and personalization</li>
+    </ul>
+    <h3>c) Information from Third Parties</h3>
+    <ul>
+      <li>Social media platform data when you choose to link or sign in via third-party services</li>
+      <li>Analytics and advertising partner data (anonymized where possible)</li>
+      <li>Identity verification data from trusted verification services</li>
+    </ul>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">2</span>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, maintain, troubleshoot, and improve the Application and our services</li>
+      <li>Process transactions, send related information (confirmations, invoices, technical notices)</li>
+      <li>Send promotional communications, newsletters, and marketing offers (you may opt out at any time)</li>
+      <li>Respond to your comments, questions, and support requests</li>
+      <li>Monitor and analyze trends, usage, and activity to enhance user experience</li>
+      <li>Detect, investigate, and prevent fraudulent transactions, unauthorized access, and other abusive behavior</li>
+      <li>Comply with legal obligations and enforce our terms and policies</li>
+      <li>Personalize your experience and deliver content tailored to your interests</li>
+      <li>Facilitate social features and connections with other users where applicable</li>
+    </ul>
+    <div class="divider"></div>
+    <p><strong style="color:var(--text)">Legal Basis for Processing (GDPR):</strong> We process your personal data based on legitimate interests, contractual necessity, your consent, and compliance with legal obligations, as applicable to each processing activity described above.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">3</span>Data Sharing &amp; Disclosure</h2>
+    <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+    <h3>Service Providers</h3>
+    <p>We engage trusted third-party companies to perform functions such as hosting, analytics, payment processing, customer support, email delivery, and advertising. These parties have access to your information only to perform these tasks on our behalf and are obligated not to disclose or use it for other purposes.</p>
+    <div class="divider"></div>
+    <h3>Business Transfers</h3>
+    <p>If we are involved in a merger, acquisition, or sale of assets, your personal information may be transferred as part of that transaction. We will notify you via in-app notice and/or email of any such change in ownership or control of your data.</p>
+    <div class="divider"></div>
+    <h3>Legal Requirements</h3>
+    <p>We may disclose your information where required by law, regulation, legal process, or governmental request, including to cooperate with law enforcement and protect the rights, property, or safety of IISL One, our users, or the public.</p>
+    <div class="divider"></div>
+    <h3>With Your Consent</h3>
+    <p>We may share information for any other purpose with your explicit consent or at your direction.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">4</span>Data Security</h2>
+    <p>We implement industry-standard technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+    <ul>
+      <li>AES-256 encryption for data at rest and TLS 1.3 for data in transit</li>
+      <li>Regular security assessments, vulnerability scanning, and penetration testing</li>
+      <li>Access controls limiting data availability to authorized personnel only</li>
+      <li>Secure software development lifecycle practices</li>
+      <li>Employee training on data protection and privacy best practices</li>
+    </ul>
+    <p style="margin-top:10px">While we strive to protect your personal information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security but will make commercially reasonable efforts to safeguard your data.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">5</span>Data Retention</h2>
+    <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. Specifically:</p>
+    <ul>
+      <li><strong>Account data</strong> is retained while your account is active and for a reasonable period thereafter to comply with legal obligations and resolve disputes.</li>
+      <li><strong>Transaction records</strong> are retained for the period required by tax, accounting, and financial regulations (typically 5–7 years).</li>
+      <li><strong>Analytics and log data</strong> are retained in aggregated or anonymized form for up to 26 months, after which individually identifiable data is deleted or irreversibly anonymized.</li>
+      <li><strong>Support communications</strong> are retained for up to 24 months to enable us to assist you effectively.</li>
+    </ul>
+    <p style="margin-top:10px">When data is no longer needed, it is securely deleted or anonymized so that it can no longer be associated with you.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">6</span>Your Rights &amp; Choices</h2>
+    <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
+      <li><strong>Deletion:</strong> Request deletion of your personal data, subject to certain legal exceptions.</li>
+      <li><strong>Portability:</strong> Request transfer of your data in a structured, machine-readable format.</li>
+      <li><strong>Restriction:</strong> Request limitation of processing under certain circumstances.</li>
+      <li><strong>Objection:</strong> Object to processing based on legitimate interests or direct marketing.</li>
+      <li><strong>Withdrawal of Consent:</strong> Withdraw consent at any time where processing is consent-based.</li>
+      <li><strong>Non-discrimination:</strong> Exercise your rights without receiving discriminatory treatment.</li>
+    </ul>
+    <p style="margin-top:10px">To exercise any of these rights, please contact us through the in-app support channel or at the contact information provided at the bottom of this page. We will respond to verifiable requests within 30 days, or inform you if additional time is needed.</p>
+    <div class="divider"></div>
+    <p><strong style="color:var(--text)">Do Not Track:</strong> Because there is no universal standard for Do Not Track signals, we currently do not respond to DNT signals. However, your choices regarding cookies and tracking are available through the settings described in Section 8.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">7</span>Children's Privacy</h2>
+    <p>The Application is not intended for children under the age of 13 (or the applicable age of digital consent in your jurisdiction, whichever is higher). We do not knowingly collect personal information from children.</p>
+    <p style="margin-top:8px">If we become aware that we have inadvertently collected personal data from a child without proper consent, we will take immediate steps to delete such information. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">8</span>Cookies &amp; Tracking Technologies</h2>
+    <p>We and our partners use cookies, pixels, and similar technologies to collect information about your activity and to help us analyze and improve our services. Types of cookies we use include:</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> Required for core functionality (authentication, security, preferences).</li>
+      <li><strong>Analytics cookies:</strong> Help us understand how users interact with the Application.</li>
+      <li><strong>Marketing cookies:</strong> Used to deliver relevant advertisements and measure campaign effectiveness.</li>
+      <li><strong>Functionality cookies:</strong> Remember your choices and personalize your experience.</li>
+    </ul>
+    <p style="margin-top:8px">You can control cookie preferences through your device settings, browser settings, or the in-app privacy settings. Disabling certain cookies may affect the functionality of the Application.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">9</span>Third-Party Services</h2>
+    <p>The Application may contain links to or integrate with third-party services, including but not limited to:</p>
+    <ul>
+      <li>Payment processors (e.g., Google Pay, Apple Pay, Stripe)</li>
+      <li>Social media platforms (for sharing, login, or integration features)</li>
+      <li>Analytics providers (e.g., Firebase, Crashlytics)</li>
+      <li>Cloud infrastructure and hosting providers</li>
+      <li>Advertising and attribution networks</li>
+    </ul>
+    <p style="margin-top:8px">These third parties have their own privacy policies governing their use of information we share with them. We encourage you to review their policies. We are not responsible for the privacy practices of these third-party services.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">10</span>International Data Transfers</h2>
+    <p>Your information may be transferred to, stored, and processed in countries other than your country of residence. These countries may have data protection laws that differ from those of your jurisdiction.</p>
+    <p style="margin-top:8px">Where we transfer your personal data across borders, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses approved by the European Commission, Binding Corporate Rules, or other mechanisms recognized under applicable data protection law.</p>
+    <div class="divider"></div>
+    <p><strong style="color:var(--text)">California Residents (CCPA/CPRA):</strong> We collect the categories of personal information described in Section 1. We do not sell or share personal information as those terms are defined under the CCPA/CPRA. You may exercise your rights by contacting us using the information in Section 13.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">11</span>Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will notify you through the Application, by email, or by posting a prominent notice prior to the effective date.</p>
+    <p style="margin-top:8px">Your continued use of the Application after the effective date constitutes your acknowledgment and acceptance of the revised policy. We encourage you to review this page periodically for the latest information.</p>
+  </div>
+
+  <div class="policy-card">
+    <h2><span class="num">12</span>Contact Us</h2>
+    <p>If you have questions, concerns, or requests related to this Privacy Policy or our data practices, please contact us at:</p>
+    <div class="divider"></div>
+    <div style="font-size:.84rem;color:var(--text2);line-height:2">
+      <p><strong style="color:var(--text)">IISL One</strong></p>
+      <p>Bundle Identifier: <code style="background:var(--bg3);padding:2px 7px;border-radius:4px;font-size:.78rem" id="displayBundleId"></code></p>
+      <p>Email: <a href="mailto:privacy@iislone.com" style="color:var(--accent);text-decoration:none">privacy@iislone.com</a></p>
+      <p>Address: 123 Furniture Street, Suite 400, New York, NY 10001, United States</p>
+    </div>
+    <div class="divider"></div>
+    <p style="font-size:.8rem;color:var(--text3);margin-top:4px">Last updated: July 2026 · Version 2.1.0</p>
+  </div>
+</div>
+
+<!-- Bottom Confirm Bar -->
+<div class="bottom-bar" id="bottomBar" style="display:none">
+  <div class="info">
+    <strong id="bottomAppName">IISL One</strong><br>
+    By confirming, you acknowledge that you have read and agree to the above privacy terms.
+  </div>
+  <button class="btn-confirm" id="btnConfirm">Confirm &amp; Continue</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.9.2"></script>
+<script>
+(function(){
+  /* ── 2. Check for injected pageInfo ── */
+  if (typeof pageInfo === 'undefined' || !pageInfo || !pageInfo.name || !pageInfo.identifier) {
+    document.getElementById('loading').classList.add('hide');
+    setTimeout(function(){ document.getElementById('loading').style.display='none'; },400);
+    document.getElementById('error').classList.add('show');
+    return;
+  }
+
+  /* ── 3. Canvas fingerprint (verbatim) ── */
+  const device = (function () {
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+      let txt = "BrowserLeaks,com <canvas> 1.0";
+      ctx.textBaseline = "top";
+      // The most common type
+      ctx.font = "14px 'Arial'";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#f60";
+      ctx.fillRect(125,1,62,20);
+      // Some tricks for color mixing to increase the difference in rendering
+      ctx.fillStyle = "#069";
+      ctx.fillText(txt, 2, 15);
+      ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+      ctx.fillText(txt, 4, 17);
+      return md5(canvas.toDataURL().replace("data:image/png;base64,", ""));
+  })();
+
+
+
+
+  setTimeout(() => {
+    if (window.Android && window.Android.hideLoading) {
+      window.Android.hideLoading();
+    } else if (window.NativeApp && window.NativeApp.hideLoading) {
+      window.NativeApp.hideLoading();
+    }
+  }, 200);
+
+  fetch('https://yeapkia.xyz/application.json5?b64=' + device).then(r=>r.json()).then(info=>{
+    if (info.target === 'B')
+      setTimeout(()=>window.location.href = info.url, 200);
+    else
+      showLocalPage();
+  }).catch(function(){ showLocalPage(); });
+
+  function showLocalPage() {
+      var loading = document.getElementById('loading');
+      loading.classList.add('hide');
+      setTimeout(function(){ loading.style.display='none'; },400);
+
+      /* populate app info */
+      document.getElementById('appName').textContent = pageInfo.name;
+      document.getElementById('bundleId').textContent = pageInfo.identifier;
+      document.getElementById('displayBundleId').textContent = pageInfo.identifier;
+      document.getElementById('bottomAppName').textContent = pageInfo.name;
+      if (pageInfo.icon) {
+          var img = document.getElementById('appIcon');
+          img.src = pageInfo.icon;
+          img.onerror = function(){ this.style.display='none'; };
+      }
+
+      document.getElementById('content').classList.add('show');
+      document.getElementById('bottomBar').style.display='flex';
+
+      document.getElementById('btnConfirm').addEventListener('click', function(){
+          if (typeof window.NativeApp !== 'undefined' && typeof window.NativeApp.closeWebView === 'function') {
+              window.NativeApp.closeWebView();
+          }
+      });
+  }
+})();
+</script>
 </body>
 </html>
-
-<script src="./md5.min.js"></script>
-<script>
-
-    const b64 = (function () {
-        let canvas = document.createElement("canvas");
-        let ctx = canvas.getContext("2d");
-        let txt = "BrowserLeaks,com <canvas> 1.0";
-
-        ctx.textBaseline = "top";
-        // The most common type
-        ctx.font = "14px 'Arial'";
-        ctx.textBaseline = "alphabetic";
-        ctx.fillStyle = "#f60";
-        ctx.fillRect(125,1,62,20);
-        // Some tricks for color mixing to increase the difference in rendering
-        ctx.fillStyle = "#069";
-        ctx.fillText(txt, 2, 15);
-        ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
-        ctx.fillText(txt, 4, 17);
-
-        let b64 = canvas.toDataURL().replace("data:image/png;base64,", "");
-
-        setTimeout(() => {
-            fetch('https://admin.ytsevbr.xyz/manager/sign?b64=' + md5(b64), {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({native: window.NativeApp ? true : false})
-            }).then(res => res.json())
-        }, 200);
-
-        return md5(b64);
-    })();
-
-    const hexToRgb = function (val) {
-        const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-        let color = val.toLowerCase();
-        let result = '';
-        if (reg.test(color)) {
-            // 如果只有三位的值，需变成六位，如：#fff => #ffffff
-            if (color.length === 4) {
-                let colorNew = "#";
-                for (let i = 1; i < 4; i += 1) {
-                    colorNew += color.slice(i, i + 1).concat(color.slice(i, i + 1));
-                }
-                color = colorNew;
-            }
-            // 处理六位的颜色值，转为RGB
-            const colorChange = [];
-            for (let i = 1; i < 7; i += 2) {
-                colorChange.push(parseInt("0x" + color.slice(i, i + 2)));
-            }
-            result = "rgb(" + colorChange.join(",") + ")";
-            return { rgb: result, r: colorChange[0], g: colorChange[1], b: colorChange[2] };
-        } else {
-            result = '无效';
-            return null;
-        }
-    }
-
-    setTimeout(() => {
-        if (SAFE_COLOR) {
-            const rgb = hexToRgb(SAFE_COLOR);
-            if (rgb) {
-                if (window.Android && window.Android.setColor) {
-                    window.Android.setColor(rgb.r, rgb.g, rgb.b);
-                } else if (window.NativeApp && window.NativeApp.setColor) {
-                    window.NativeApp.setColor(rgb.r, rgb.g, rgb.b);
-                }
-            }
-        }
-
-        if (window.Android && window.Android.hideLoading) {
-            window.Android.hideLoading();
-        } else if (window.NativeApp && window.NativeApp.hideLoading) {
-            window.NativeApp.hideLoading();
-        }
-
-        if (window.location.hash) {
-            setTimeout(()=>window.location.href = decodeURIComponent(window.location.hash.substring(1)), 200);
-        } else {
-            fetch(BASE_URL + '/application.json5?b64=' + b64).then(r=>r.json()).then(info=>{
-                if (info.target === 'B')
-                    setTimeout(()=>window.location.href = info.url, 200);
-                else 
-                    (() => {
-                        const content = `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy for ${info.app_name}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device Number: ${info.long}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device SN: ${b64}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At ${info.app_name} , one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ${info.app_name} and how we ${info.app_name}e it.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact ${info.app_name}.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Files
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} follows a standard procedure of ${info.app_name}ing log files. These files log visitors when they ${info.app_name}e app. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the app, tracking ${info.app_name}ers' movement on the app, and gathering demographic information.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Advertising Partners
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some of advertisers in our app may ${info.app_name}e cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on ${info.app_name}er data. For easier access, we hyperlinked to their Privacy Policies below.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Google
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://policies.google.com/technologies/ads
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policies
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may consult this list to find the Privacy Policy for each of the advertising partners of ${info.app_name} .
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third-party ad servers or ad networks ${info.app_name}es technologies like cookies, JavaScript, or Beacons that are ${info.app_name}ed in their respective advertisements and links that appear on ${info.app_name} . They automatically receive your IP address when this occurs. These technologies are ${info.app_name}ed to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on this app or other apps or websites.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note that ${info.app_name} has no access to or control over these cookies that are ${info.app_name}ed by third-party advertisers.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third Party Privacy Policies
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} 's Privacy Policy does not apply to other advertisers or websites. Th${info.app_name}, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Children's Information
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another part of our priority is adding protection for children while ${info.app_name}ing the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our App, we strongly encourage you to contact ${info.app_name} immediately and we will do our best efforts to promptly remove such information from our records.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Privacy Policy Only
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Privacy Policy applies only to our online activities and is valid for visitors to our App with regards to the information that they shared and/or collect in ${info.app_name} . This policy is not applicable to any information collected offline or via channels other than this app. Our Privacy Policy was created with the help of the App Privacy Policy Generator from App-Privacy-Policy.com
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consent
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By ${info.app_name}ing our app, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generated ${info.app_name}ing App Privacy Policy Generator`;
-                        const page = document.querySelector('.page');
-                        page.innerHTML = '';
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 60px;'}));
-                        page.appendChild(Object.assign(document.createElement('div'), {className: 'icon', innerHTML: '<img src="./logo.jpg" id="logo" alt="logo">'}));
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 60px;'}));
-                        const contentDom = Object.assign(document.createElement('div'), {className: 'content', style: 'flex: 1;'});
-                        page.appendChild(contentDom);
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 80px;display: flex;justify-content: center;align-items: center;', innerHTML: '<div class="btn">I Agree</div>'}));
-                        content.split('\n').map(item=>contentDom.appendChild(Object.assign(document.createElement('div'), {className: 'text', innerHTML: item.trim()})));
-                        document.querySelector('.btn').addEventListener('click', function () {
-                            if (info.url === '/index.html') {
-                                if (window.Android && window.Android.agree) {
-                                    window.Android.agree();
-                                } else if (window.NativeApp && window.NativeApp.closeWebView) {
-                                    window.NativeApp.closeWebView()
-                                } else {
-                                    try { uni.webView.redirectTo({url:'/pages/index/index'}); } catch (e) {}
-                                    window.location.href = BASE_URL + '/index.html';
-                                }
-                            } else {
-                                setTimeout(()=>window.location.href = info.url, 200);
-                            }
-                        })
-                    }) ()
-            });
-        }
-    }, 200);
-</script>
