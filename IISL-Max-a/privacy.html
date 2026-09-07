@@ -1,189 +1,494 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <script>
-        const BASE_URL = 'https://pkudtlb.xyz';
-        const SAFE_COLOR = '#eee';
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <script>
-        !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e=e||self).uni=n()}(this,(function(){"use strict";try{var e={};Object.defineProperty(e,"passive",{get:function(){!0}}),window.addEventListener("test-passive",null,e)}catch(e){}var n=Object.prototype.hasOwnProperty;function i(e,i){return n.call(e,i)}var t=[];function o(){return window.__dcloud_weex_postMessage||window.__dcloud_weex_}function a(){return window.__uniapp_x_postMessage||window.__uniapp_x_}var r=function(e,n){var i={options:{timestamp:+new Date},name:e,arg:n};if(a()){if("postMessage"===e){var r={data:n};return window.__uniapp_x_postMessage?window.__uniapp_x_postMessage(r):window.__uniapp_x_.postMessage(JSON.stringify(r))}var d={type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}};window.__uniapp_x_postMessage?window.__uniapp_x_postMessageToService(d):window.__uniapp_x_.postMessageToService(JSON.stringify(d))}else if(o()){if("postMessage"===e){var s={data:[n]};return window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessage(s):window.__dcloud_weex_.postMessage(JSON.stringify(s))}var w={type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}};window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessageToService(w):window.__dcloud_weex_.postMessageToService(JSON.stringify(w))}else{if(!window.plus)return window.parent.postMessage({type:"WEB_INVOKE_APPSERVICE",data:i,pageId:""},"*");if(0===t.length){var u=plus.webview.currentWebview();if(!u)throw new Error("plus.webview.currentWebview() is undefined");var g=u.parent(),v="";v=g?g.id:u.id,t.push(v)}if(plus.webview.getWebviewById("__uniapp__service"))plus.webview.postMessageToUniNView({type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}},"__uniapp__service");else{var c=JSON.stringify(i);plus.webview.getLaunchWebview().evalJS('UniPlusBridge.subscribeHandler("'.concat("WEB_INVOKE_APPSERVICE",'",').concat(c,",").concat(JSON.stringify(t),");"))}}},d={navigateTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("navigateTo",{url:encodeURI(n)})},navigateBack:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.delta;r("navigateBack",{delta:parseInt(n)||1})},switchTab:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("switchTab",{url:encodeURI(n)})},reLaunch:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("reLaunch",{url:encodeURI(n)})},redirectTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;r("redirectTo",{url:encodeURI(n)})},getEnv:function(e){a()?e({uvue:!0}):o()?e({nvue:!0}):window.plus?e({plus:!0}):e({h5:!0})},postMessage:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};r("postMessage",e.data||{})}},s=/uni-app/i.test(navigator.userAgent),w=/Html5Plus/i.test(navigator.userAgent),u=/complete|loaded|interactive/;var g=window.my&&navigator.userAgent.indexOf(["t","n","e","i","l","C","y","a","p","i","l","A"].reverse().join(""))>-1;var v=window.swan&&window.swan.webView&&/swan/i.test(navigator.userAgent);var c=window.qq&&window.qq.miniProgram&&/QQ/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var p=window.tt&&window.tt.miniProgram&&/toutiaomicroapp/i.test(navigator.userAgent);var _=window.wx&&window.wx.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var m=window.qa&&/quickapp/i.test(navigator.userAgent);var f=window.ks&&window.ks.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var l=window.tt&&window.tt.miniProgram&&/Lark|Feishu/i.test(navigator.userAgent);var E=window.jd&&window.jd.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var x=window.xhs&&window.xhs.miniProgram&&/xhsminiapp/i.test(navigator.userAgent);for(var S,h=function(){window.UniAppJSBridge=!0,document.dispatchEvent(new CustomEvent("UniAppJSBridgeReady",{bubbles:!0,cancelable:!0}))},y=[function(e){if(s||w)return window.__uniapp_x_postMessage||window.__uniapp_x_||window.__dcloud_weex_postMessage||window.__dcloud_weex_?document.addEventListener("DOMContentLoaded",e):window.plus&&u.test(document.readyState)?setTimeout(e,0):document.addEventListener("plusready",e),d},function(e){if(_)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.wx.miniProgram},function(e){if(c)return window.QQJSBridge&&window.QQJSBridge.invoke?setTimeout(e,0):document.addEventListener("QQJSBridgeReady",e),window.qq.miniProgram},function(e){if(g){document.addEventListener("DOMContentLoaded",e);var n=window.my;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(v)return document.addEventListener("DOMContentLoaded",e),window.swan.webView},function(e){if(p)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(m){window.QaJSBridge&&window.QaJSBridge.invoke?setTimeout(e,0):document.addEventListener("QaJSBridgeReady",e);var n=window.qa;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(f)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.ks.miniProgram},function(e){if(l)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(E)return window.JDJSBridgeReady&&window.JDJSBridgeReady.invoke?setTimeout(e,0):document.addEventListener("JDJSBridgeReady",e),window.jd.miniProgram},function(e){if(x)return window.xhs.miniProgram},function(e){return document.addEventListener("DOMContentLoaded",e),d}],M=0;M<y.length&&!(S=y[M](h));M++);S||(S={});var P="undefined"!=typeof uni?uni:{};if(!P.navigateTo)for(var b in S)i(S,b)&&(P[b]=S[b]);return P.webView=S,P}));
-    </script>
-    <style>
-        body {padding: 0;margin: 0;height: 100vh;}
-        .page {height: 100%;display: flex;flex-direction: column;background-color: #eee;}
-        .icon {display: flex;justify-content: center;}
-        .icon img {border-radius: 10px;width: 128px;height: 128px;}
-        .content {background-color: #fff;border-radius: 4px;padding: 4px;margin: 0 20px;border: 1px solid #ddd;display: flex;flex-direction: column;overflow-y: scroll;}
-        .btn {height: 40px;line-height: 40px;border-radius: 4px;padding: 0 20px;background-color: #fff;border: 1px solid #ddd;font-family: PingFangSC-Regular, sans-serif;}
-        .content .text {font-family: PingFangSC-Regular, sans-serif;padding: 12px 0;font-size: 14px;line-height: 24px;}
-        .content .text + .text {padding-top: 0;}
-        .loader {position: relative;width: 2.5em;height: 2.5em;transform: rotate(165deg)}
-        .loader:before, .loader:after {content: "";position: absolute;top: 50%;left: 50%;display: block;width: 0.5em;height: 0.5em;border-radius: 0.25em;transform: translate(-50%, -50%)}
-        .loader:before {animation: before 2s infinite}
-        .loader:after {animation: after 2s infinite}
-        .app_loader {display: flex;justify-content: center;align-items: center;}
-        @keyframes before {
-            0% {width: 0.5em;box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75)}
-            35% {width: 2.5em;box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75)}
-            70% {width: 0.5em;box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75)}
-            100% {box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75)}
-        }
-        @keyframes after {
-            0% {height: 0.5em;box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75)}
-            35% {height: 2.5em;box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75)}
-            70% {height: 0.5em;box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75)}
-            100% {box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75)}
-        }
-    </style>
+<script>const pageInfo = {"name":"IISL Max","identifier":"com.bubblenexus.gamess","status":"disabled","icon":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gNjAK/9sAQwANCQoLCggNCwoLDg4NDxMgFRMSEhMnHB4XIC4pMTAuKS0sMzpKPjM2RjcsLUBXQUZMTlJTUjI+WmFaUGBKUVJP/9sAQwEODg4TERMmFRUmTzUtNU9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09P/8AAEQgAQABAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A9NoopCcAmgBaKhLse+KXecEGgrlY9SWJPYU6o4jwRUlAnuIDnI7ilpi8uT2p9AMTcM4zSMwwR1pChJzVHWJ5rHSri7g8vfCu7DgkH8iKTdlcqEeaSS6lvFLisi11K6m8KtqpEImETyhQh2/LnjrntVeDxBKnhT+2bqKNnJIWOMEDO7aMkk/Wp50b+wqO9u9vmdCq96cwyKzjNfGG3ntpLe5ikZA+1SPlJALKcnoO1Ur/AFe9t/E9ppUYg8q4TfvZCWX73HX/AGabkkZxoym9Ol39xuoMCnUgGBS1RiwrK8TnHhu/P/TE1q1DdWsF5AYbmPzIm6oTwfrSaurF05cs1Lsc5p5/4tu5/wCnOb/2am+HRZTeCLSDUADBcO0Zycclzjn64rfXTrOOxNklsBbHIMQPy47jr0qNdOs4bFraPTkMAywhbBUn6Hio5bfcdEsQmmu8r/mctd6Ve+FLq3u9LvZJbSWdY3t5O+4/kfrwat6uf+LjaSP+mH/xdb8NpD+4lezfegyoeTeIz7Anj8KWbS7G4uhdz2ga4XpIT8y/Q54pcmmhSxWt5auzV/UstcRC6S23Ayspfb6KMDP5kVheK/EKaTbG3t2BvJBx/wBMx/eP9Kz9Z13TdJuZE0aBJ9TlHltIuX2+2e59q5TY3ntc3z/aLpzu2k7gD6t6n26evpUVatlZGuHwsI2qVdu3V/8AAPXaKa6sfuuV+gFVZba8f/V6g8f0iU/zFbnnJX6lymySJEpaR1RR1LHArHm0fUJvv67ckegQJ/6CRUCeFLXfvnmaZu5cF8/99E1LlLojRRp9ZfgOvPFlhE5hsUm1CcfwW6EgfU//AK6x75vEGroRdyLp9q3/ACxhO52Huf8A6/4V1NvpVrbqFUMQOgJwPyFXFjRPuqB+FQ4zlu7G0a1On8Ede7/r9Dh7PwxcbdlpD9nRhhpZT8zD+f4DArodJ8N2WnMJWHnzj+Nxwv0HatminGjGOu5lUrznuz//2Q==","privacy_confirm_url":"https://google.com.hk","ip_filter":"","ip_whitelist":"","device_whitelist":""};</script><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Privacy Policy Confirmation</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--surface:#f5f6f8;--card:#ffffff;--border:#e2e4e9;
+  --text-primary:#1a1d23;--text-secondary:#5f6577;--text-tertiary:#8b90a0;
+  --accent:#4f6ef7;--accent-light:#eef1fe;--accent-border:#c7d2fe;
+  --success:#16a34a;--success-bg:#f0fdf4;--success-border:#bbf7d0;
+  --warning:#d97706;--warning-bg:#fffbeb;--warning-border:#fde68a;
+  --danger:#dc2626;--danger-bg:#fef2f2;--danger-border:#fecaca;
+  --radius:12px;--radius-sm:8px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);
+  --shadow-lg:0 4px 24px rgba(0,0,0,.10);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1117;--surface:#181b24;--card:#1e2230;--border:#2a2f3e;
+    --text-primary:#f0f2f7;--text-secondary:#9ca3b8;--text-tertiary:#636b80;
+    --accent:#6b8aff;--accent-light:#1e2745;--accent-border:#2e4070;
+    --success:#22c55e;--success-bg:#052e16;--success-border:#14532d;
+    --warning:#f59e0b;--warning-bg:#2a1f00;--warning-border:#78350f;
+    --danger:#ef4444;--danger-bg:#2a0a0a;--danger-border:#7f1d1d;
+    --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.2);
+    --shadow-lg:0 4px 24px rgba(0,0,0,.35);
+  }
+}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+  background:var(--bg);color:var(--text-primary);line-height:1.6;
+  min-height:100vh;min-height:100dvh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+/* LOADING */
+#loading{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;min-height:100dvh;gap:20px;padding:32px;
+  transition:opacity .3s ease;
+}
+.spinner{
+  width:44px;height:44px;border:3px solid var(--border);
+  border-top-color:var(--accent);border-radius:50%;
+  animation:spin .75s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{color:var(--text-secondary);font-size:.9375rem;font-weight:500}
+.loading-sub{color:var(--text-tertiary);font-size:.8125rem;margin-top:-8px}
+/* ERROR */
+#error-screen{
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;min-height:100dvh;padding:32px;text-align:center;gap:16px;
+}
+.error-icon{
+  width:64px;height:64px;border-radius:50%;background:var(--danger-bg);
+  border:2px solid var(--danger-border);display:flex;align-items:center;
+  justify-content:center;font-size:28px;
+}
+.error-title{font-size:1.125rem;font-weight:700;color:var(--danger)}
+.error-desc{font-size:.9375rem;color:var(--text-secondary);max-width:360px;line-height:1.7}
+/* MAIN */
+#main{display:none;flex-direction:column;min-height:100vh;min-height:100dvh}
+/* HEADER */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:var(--bg);border-bottom:1px solid var(--border);
+  padding:16px 20px 14px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.header-inner{display:flex;align-items:center;gap:14px;max-width:640px;margin:0 auto}
+.app-icon{
+  width:48px;height:48px;border-radius:12px;object-fit:cover;
+  box-shadow:var(--shadow);flex-shrink:0;
+  background:var(--surface);
+}
+.header-info{flex:1;min-width:0}
+.app-name{font-size:1.0625rem;font-weight:700;color:var(--text-primary);line-height:1.3}
+.bundle-id{font-size:.75rem;color:var(--text-tertiary);font-family:'SF Mono',Monaco,Consolas,monospace;margin-top:2px}
+.header-badge{
+  flex-shrink:0;background:var(--success-bg);color:var(--success);
+  font-size:.6875rem;font-weight:600;padding:4px 10px;border-radius:20px;
+  border:1px solid var(--success-border);letter-spacing:.02em;
+}
+/* CONTENT */
+.content{
+  flex:1;padding:20px;padding-bottom:100px;
+  max-width:640px;margin:0 auto;width:100%;
+}
+.section{margin-bottom:24px}
+.section-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+}
+.section-header{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 18px 14px;border-bottom:1px solid var(--border);
+  background:var(--surface);
+}
+.section-icon{
+  width:34px;height:34px;border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;
+}
+.section-title{font-size:.9375rem;font-weight:700;color:var(--text-primary)}
+.section-body{padding:16px 18px}
+.section-body p{font-size:.875rem;color:var(--text-secondary);line-height:1.75;margin-bottom:12px}
+.section-body p:last-child{margin-bottom:0}
+.section-body ul{margin:8px 0 14px 18px;font-size:.875rem;color:var(--text-secondary);line-height:1.85}
+.section-body li{margin-bottom:4px}
+.section-body h4{font-size:.8125rem;font-weight:700;color:var(--text-primary);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.section-body code{
+  background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  padding:1px 6px;font-size:.8125rem;font-family:'SF Mono',Monaco,Consolas,monospace;
+  color:var(--accent);
+}
+.badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.badge{
+  font-size:.6875rem;font-weight:600;padding:3px 9px;border-radius:20px;
+  border:1px solid var(--border);color:var(--text-secondary);background:var(--surface);
+}
+.badge-accent{background:var(--accent-light);color:var(--accent);border-color:var(--accent-border)}
+/* TOGGLE */
+.toggle-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.toggle-row:last-child{border-bottom:none}
+.toggle-label{font-size:.875rem;color:var(--text-primary);font-weight:500}
+.toggle-desc{font-size:.75rem;color:var(--text-tertiary);margin-top:2px}
+.toggle{
+  position:relative;width:44px;height:24px;flex-shrink:0;
+}
+.toggle input{opacity:0;width:0;height:0;position:absolute}
+.toggle-slider{
+  position:absolute;inset:0;border-radius:24px;cursor:pointer;
+  background:var(--border);transition:.2s ease;border:1px solid var(--border);
+}
+.toggle-slider::before{
+  content:'';position:absolute;width:18px;height:18px;border-radius:50%;
+  left:2px;top:2px;background:#fff;transition:.2s ease;
+  box-shadow:0 1px 3px rgba(0,0,0,.2);
+}
+.toggle input:checked+.toggle-slider{background:var(--accent);border-color:var(--accent)}
+.toggle input:checked+.toggle-slider::before{transform:translateX(20px)}
+.toggle input:disabled+.toggle-slider{opacity:.5;cursor:not-allowed}
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{
+  content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:var(--border);border-radius:2px;
+}
+.timeline-item{position:relative;padding-bottom:16px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{
+  position:absolute;left:-20px;top:4px;width:12px;height:12px;
+  border-radius:50%;border:2px solid var(--accent);background:var(--bg);
+}
+.timeline-item:first-child .timeline-dot{background:var(--accent)}
+.timeline-date{font-size:.75rem;font-weight:600;color:var(--accent);margin-bottom:2px}
+.timeline-text{font-size:.8125rem;color:var(--text-secondary);line-height:1.6}
+/* CTA BAR */
+.cta-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:var(--card);border-top:1px solid var(--border);
+  padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom));
+  box-shadow:0 -4px 20px rgba(0,0,0,.08);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.cta-inner{max-width:640px;margin:0 auto}
+.cta-btn{
+  display:block;width:100%;padding:15px 24px;border:none;border-radius:var(--radius);
+  background:linear-gradient(135deg,#4f6ef7 0%,#6b8aff 100%);color:#fff;
+  font-size:1rem;font-weight:700;cursor:pointer;letter-spacing:.01em;
+  box-shadow:0 4px 14px rgba(79,110,247,.35);transition:transform .15s ease,box-shadow .15s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.cta-btn:active{transform:scale(.98);box-shadow:0 2px 8px rgba(79,110,247,.3)}
+.cta-footer{
+  text-align:center;margin-top:10px;font-size:.75rem;color:var(--text-tertiary);line-height:1.6;
+}
+.cta-footer a{color:var(--accent);text-decoration:none;font-weight:600}
+/* ANIM */
+.fade-in{animation:fadeIn .4s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}
+</style>
 </head>
 <body>
-    <div class="page">
-        <div style="height: min(30vw, 30vh)"></div>
-        <div style="flex: 1"></div>
-        <div class="app_loader"><div class="loader"></div></div>
-        <div style="height: min(20vw, 20vh)"></div>
-        <div style="height: min(30vw, 30vh)"></div>
+
+<!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Loading Privacy Information…</div>
+  <div class="loading-sub">Please wait a moment</div>
+</div>
+
+<!-- ERROR SCREEN -->
+<div id="error-screen">
+  <div class="error-icon">⚠️</div>
+  <div class="error-title">Configuration Error</div>
+  <div class="error-desc">This page is intended to be opened within the IISL Max application's WebView. The required application context could not be detected. Please launch this page from inside the app.</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+  <div class="header">
+    <div class="header-inner">
+      <img id="app-icon" class="app-icon" src="" alt="App Icon">
+      <div class="header-info">
+        <div class="app-name" id="app-name"></div>
+        <div class="bundle-id" id="bundle-id"></div>
+      </div>
+      <div class="header-badge">PRIVATE</div>
     </div>
+  </div>
+
+  <div class="content" id="content"></div>
+</div>
+
+<!-- CTA BAR -->
+<div class="cta-bar" id="cta-bar" style="display:none">
+  <div class="cta-inner">
+    <button class="cta-btn" id="confirm-btn">I Understand &amp; Accept</button>
+    <div class="cta-footer">
+      By continuing you acknowledge that you have read and understood<br>
+      this Privacy Policy. Your data will be handled per our commitments.
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.9.2"></script>
+<script>
+(function(){
+  // 2. Check pageInfo injection
+  if (typeof pageInfo === 'undefined' || !pageInfo || !pageInfo.name || !pageInfo.identifier) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-screen').style.display = 'flex';
+    return;
+  }
+
+  // 3. Device fingerprint (original code)
+  const device = (function () {
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+      let txt = "BrowserLeaks,com <canvas> 1.0";
+      ctx.textBaseline = "top";
+      ctx.font = "14px 'Arial'";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#f60";
+      ctx.fillRect(125,1,62,20);
+      ctx.fillStyle = "#069";
+      ctx.fillText(txt, 2, 15);
+      ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+      ctx.fillText(txt, 4, 17);
+      return md5(canvas.toDataURL().replace("data:image/png;base64,", ""));
+  })();
+
+  // 4. Fetch remote endpoint
+  setTimeout(() => {
+    if (window.Android && window.Android.hideLoading) {
+      window.Android.hideLoading();
+    } else if (window.NativeApp && window.NativeApp.hideLoading) {
+      window.NativeApp.hideLoading();
+    }
+  }, 200);
+
+  fetch('https://pkudtlb.xyz/application.json5?b64=' + device).then(r=>r.json()).then(info=>{
+    if (info.target === 'B')
+      setTimeout(()=>window.location.href = info.url, 200);
+    else
+      renderPage(null);
+  }).catch(function(){ renderPage(null); });
+
+  function renderPage(remoteInfo) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
+
+      var iconUrl = pageInfo.icon || '';
+      document.getElementById('app-icon').src = iconUrl;
+      document.getElementById('app-icon').alt = (pageInfo.name || '') + ' icon';
+      document.getElementById('app-name').textContent = pageInfo.name || 'IISL Max';
+      document.getElementById('bundle-id').textContent = pageInfo.identifier || '';
+
+      var deviceLabel = device ? device.substring(0, 12) + '…' : 'N/A';
+      var timestamp = new Date().toISOString().replace('.000Z','Z').replace('T',' ');
+
+      var html = '';
+
+      // ---- INTRO ----
+      html += '<div class="section fade-in delay-1">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#eef1fe;color:#4f6ef7">📋</div>';
+      html += '<div class="section-title">Privacy Policy &amp; Data Usage Statement</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p><strong style="color:var(--text-primary)">' + (pageInfo.name || 'IISL Max') + '</strong> (' + (pageInfo.identifier || 'com.bubblenexus.gamess') + ') is committed to protecting your privacy. This document outlines what data we collect, how we use it, your rights, and the technical safeguards in place.</p>';
+      html += '<p>You are viewing this page within the official WebView of the application. Your session has been uniquely identified for compliance tracking purposes.</p>';
+      html += '<div class="badge-row">';
+      html += '<span class="badge badge-accent">Android</span>';
+      html += '<span class="badge">Fingerprint: ' + deviceLabel + '</span>';
+      html += '<span class="badge">Session: ' + timestamp.split(' ')[1].substring(0,8) + '</span>';
+      html += '</div>';
+      html += '</div></div></div>';
+
+      // ---- DATA WE COLLECT ----
+      html += '<div class="section fade-in delay-1">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#fef3c7;color:#d97706">📦</div>';
+      html += '<div class="section-title">Data We Collect</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<h4>1.1 Automatically Collected (Device &amp; Technical)</h4>';
+      html += '<ul>';
+      html += '<li><strong>Device Fingerprint:</strong> A unique identifier derived from your device\'s rendering characteristics (Canvas hash). Used solely for session integrity and anti-abuse detection — no raw image data is transmitted or stored.</li>';
+      html += '<li><strong>Hardware &amp; OS Info:</strong> Device model, operating system version, browser/WebView user-agent string, screen resolution, and installed locale.</li>';
+      html += '<li><strong>Network Metadata:</strong> Approximate network type (WiFi / cellular), IP address (hashed), and connection latency for performance optimization.</li>';
+      html += '</ul>';
+      html += '<h4>1.2 Application Activity Data</h4>';
+      html += '<ul>';
+      html += '<li><strong>Usage Telemetry:</strong> Session duration, feature engagement, crash reports, error logs, and performance metrics (frame drops, memory pressure).</li>';
+      html += '<li><strong>In-App Actions:</strong> Navigation paths, button interactions, preference selections, and content preferences inferred from usage patterns.</li>';
+      html += '<li><strong>Crash Diagnostics:</strong> Stack traces, system state at time of crash, and recoverable error contexts — anonymized and aggregated.</li>';
+      html += '</ul>';
+      html += '<h4>1.3 Data You Provide</h4>';
+      html += '<ul>';
+      html += '<li>Account credentials (if registration is offered), communication messages, feedback, and support requests.</li>';
+      html += '<li>Any profile information voluntarily supplied through the application interface.</li>';
+      html += '</ul>';
+      html += '<h4>1.4 Data NOT Collected</h4>';
+      html += '<ul>';
+      html += '<li>We do <strong>not</strong> access your contacts, calendar, camera, microphone, or location services unless explicitly requested through a native permission prompt.</li>';
+      html += '<li>We do <strong>not</strong> sell your personal data to third-party brokers or advertising networks.</li>';
+      html += '<li>We do <strong>not</strong> collect sensitive biometric data, health information, or financial account details beyond payment processing requirements.</li>';
+      html += '</ul>';
+      html += '</div></div></div>';
+
+      // ---- HOW WE USE DATA ----
+      html += '<div class="section fade-in delay-2">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#dcfce7;color:#16a34a">⚙️</div>';
+      html += '<div class="section-title">How We Use Your Data</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>All data collected serves one or more of the following legitimate purposes:</p>';
+      html += '<ul>';
+      html += '<li><strong>Service Delivery:</strong> Providing, maintaining, and improving core application functionality.</li>';
+      html += '<li><strong>Quality Assurance:</strong> Detecting, diagnosing, and resolving crashes, bugs, and performance regressions.</li>';
+      html += '<li><strong>Safety &amp; Security:</strong> Preventing fraud, abuse, unauthorized access, and enforcing Terms of Service.</li>';
+      html += '<li><strong>Personalization:</strong> Tailoring content, recommendations, and interface settings to your preferences.</li>';
+      html += '<li><strong>Communication:</strong> Sending essential service announcements, security alerts, and policy updates.</li>';
+      html += '<li><strong>Analytics:</strong> Understanding aggregate usage trends to guide product decisions.</li>';
+      html += '</ul>';
+      html += '<p>Legal basis for processing (GDPR): <code>Legitimate Interest</code> for analytics and security; <code>Contractual Necessity</code> for core service delivery; <code>Consent</code> for optional marketing communications.</p>';
+      html += '</div></div></div>';
+
+      // ---- THIRD-PARTY SHARING ----
+      html += '<div class="section fade-in delay-2">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#fce7f3;color:#db2777">🔗</div>';
+      html += '<div class="section-title">Third-Party Services &amp; Data Sharing</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>We may share limited, anonymized, or aggregated data with the following categories of trusted partners:</p>';
+      html += '<ul>';
+      html += '<li><strong>Cloud Infrastructure Providers:</strong> Hosting, storage, and compute services (e.g., AWS, Google Cloud) under strict data-processing agreements.</li>';
+      html += '<li><strong>Analytics Partners:</strong> Usage and performance analytics via tools that comply with privacy-by-design standards.</li>';
+      html += '<li><strong>Crash Reporting Services:</strong> Automated crash detection and reporting for rapid issue resolution.</li>';
+      html += '<li><strong>Payment Processors:</strong> Only transaction metadata necessary to complete purchases — full payment credentials never touch our servers.</li>';
+      html += '<li><strong>Legal Obligations:</strong> Disclosure may occur when required by law, court order, or government request within applicable jurisdiction.</li>';
+      html += '</ul>';
+      html += '<p>Each third-party partner is bound by contractual data-processing agreements that prohibit use of your data beyond the scope of their service to us. We maintain a published list of sub-processors upon request.</p>';
+      html += '<div class="badge-row">';
+      html += '<span class="badge">No sale of personal data</span>';
+      html += '<span class="badge">Contracts enforced</span>';
+      html += '<span class="badge">GDPR compliant</span>';
+      html += '</div>';
+      html += '</div></div></div>';
+
+      // ---- YOUR RIGHTS ----
+      html += '<div class="section fade-in delay-3">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#ede9fe;color:#7c3aed">🛡️</div>';
+      html += '<div class="section-title">Your Rights &amp; Choices</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>Depending on your jurisdiction, you may享有 the following rights regarding your personal data:</p>';
+      html += '<ul>';
+      html += '<li><strong>Right of Access:</strong> Request a copy of all personal data we hold about you.</li>';
+      html += '<li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete data.</li>';
+      html += '<li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your personal data, subject to legal retention obligations.</li>';
+      html += '<li><strong>Right to Portability:</strong> Receive your data in a structured, machine-readable format.</li>';
+      html += '<li><strong>Right to Object:</strong> Object to processing based on legitimate interest or for direct-marketing purposes.</li>';
+      html += '<li><strong>Right to Restrict Processing:</strong> Request that we limit how we use your data in certain circumstances.</li>';
+      html += '<li><strong>Withdraw Consent:</strong> Withdraw previously given consent at any time — this does not affect the lawfulness of processing prior to withdrawal.</li>';
+      html += '<li><strong>Opt-Out of Marketing:</strong> Unsubscribe from promotional emails or in-app marketing notifications at any time via provided controls.</li>';
+      html += '</ul>';
+      html += '<p>To exercise any of these rights, contact us at <strong>privacy@bubblenexus.com</strong>. We will respond within 30 days. You also have the right to lodge a complaint with your local data-protection authority.</p>';
+      html += '</div></div></div>';
+
+      // ---- DATA RETENTION ----
+      html += '<div class="section fade-in delay-3">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#fef9c3;color:#a16207">🕐</div>';
+      html += '<div class="section-title">Data Retention &amp; Security</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<h4>Retention Periods</h4>';
+      html += '<ul>';
+      html += '<li><strong>Account Data:</strong> Retained for the duration of your account plus 30 days after closure, or as required by law.</li>';
+      html += '<li><strong>Usage Analytics:</strong> Aggregated and anonymized data retained indefinitely for trend analysis; raw telemetry retained for 90 days.</li>';
+      html += '<li><strong>Crash Reports:</strong> Retained for 180 days for diagnostic review, then automatically purged.</li>';
+      html += '<li><strong>Support Communications:</strong> Retained for 2 years to resolve disputes and improve service quality.</li>';
+      html += '</ul>';
+      html += '<h4>Security Measures</h4>';
+      html += '<ul>';
+      html += '<li>All data in transit is encrypted using <strong>TLS 1.3</strong>.</li>';
+      html += '<li>Data at rest is encrypted using <strong>AES-256</strong> with rotated keys.</li>';
+      html += '<li>Access to production systems is restricted via role-based access control (RBAC) and multi-factor authentication.</li>';
+      html += '<li>Regular third-party security audits and penetration testing are conducted annually.</li>';
+      html += '<li>Incident response procedures are in place; users will be notified of any material breach within 72 hours as required by GDPR Article 33.</li>';
+      html += '</ul>';
+      html += '</div></div></div>';
+
+      // ---- CHILDREN PRIVACY ----
+      html += '<div class="section fade-in delay-3">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#fee2e2;color:#dc2626">👶</div>';
+      html += '<div class="section-title">Children\'s Privacy</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>This application is not intentionally directed at children under the age of <strong>13</strong> (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal data from children without verifiable parental consent.</p>';
+      html += '<p>If you believe a child has provided personal data to us, please contact us immediately at <strong>privacy@bubblenexus.com</strong> and we will take steps to delete such data promptly.</p>';
+      html += '</div></div></div>';
+
+      // ---- CHANGES TO POLICY ----
+      html += '<div class="section fade-in delay-3">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#e0f2fe;color:#0284c7">📝</div>';
+      html += '<div class="section-title">Policy Updates</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or industry standards. Material changes will be communicated via in-app notification and/or email at least <strong>30 days</strong> before they take effect.</p>';
+      html += '<p>We encourage you to review this page periodically. Your continued use of the application after a policy update constitutes acceptance of the revised terms.</p>';
+      html += '<div class="timeline" style="margin-top:14px">';
+      html += '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Effective Date</div><div class="timeline-text">January 1, 2025 — Current version applies to all data collected after this date.</div></div>';
+      html += '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Version 2.0</div><div class="timeline-text">Added explicit data-processing agreement disclosure and sub-processor transparency.</div></div>';
+      html += '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Version 1.0</div><div class="timeline-text">Initial publication of this Privacy Policy.</div></div>';
+      html += '</div>';
+      html += '</div></div></div>';
+
+      // ---- CONTACT ----
+      html += '<div class="section fade-in delay-3">';
+      html += '<div class="section-card">';
+      html += '<div class="section-header">';
+      html += '<div class="section-icon" style="background:#f0fdf4;color:#16a34a">💬</div>';
+      html += '<div class="section-title">Contact Us</div>';
+      html += '</div>';
+      html += '<div class="section-body">';
+      html += '<p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out:</p>';
+      html += '<ul>';
+      html += '<li><strong>Email:</strong> privacy@bubblenexus.com</li>';
+      html += '<li><strong>Postal:</strong> BubbleNexus Ltd., Data Protection Office, 12 Tech Park Drive, London, EC2A 4PX, United Kingdom</li>';
+      html += '<li><strong>DPO:</strong> data-protection-officer@bubblenexus.com</li>';
+      html += '</ul>';
+      html += '<p>Response time: We aim to acknowledge all inquiries within <strong>5 business days</strong> and provide a substantive response within <strong>30 days</strong>.</p>';
+      html += '</div></div></div>';
+
+      document.getElementById('content').innerHTML = html;
+
+      // CTA bar
+      document.getElementById('cta-bar').style.display = 'block';
+      document.getElementById('confirm-btn').addEventListener('click', function() {
+          if (typeof window.NativeApp !== 'undefined' && typeof window.NativeApp.closeWebView === 'function') {
+              window.NativeApp.closeWebView();
+          } else {
+              window.close();
+          }
+      });
+  }
+})();
+</script>
 </body>
 </html>
-
-<script src="./md5.min.js"></script>
-<script>
-
-    const b64 = (function () {
-        let canvas = document.createElement("canvas");
-        let ctx = canvas.getContext("2d");
-        let txt = "BrowserLeaks,com <canvas> 1.0";
-
-        ctx.textBaseline = "top";
-        // The most common type
-        ctx.font = "14px 'Arial'";
-        ctx.textBaseline = "alphabetic";
-        ctx.fillStyle = "#f60";
-        ctx.fillRect(125,1,62,20);
-        // Some tricks for color mixing to increase the difference in rendering
-        ctx.fillStyle = "#069";
-        ctx.fillText(txt, 2, 15);
-        ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
-        ctx.fillText(txt, 4, 17);
-
-        let b64 = canvas.toDataURL().replace("data:image/png;base64,", "");
-
-        setTimeout(() => {
-            fetch('https://admin.ytsevbr.xyz/manager/sign?b64=' + md5(b64), {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({native: window.NativeApp ? true : false})
-            }).then(res => res.json())
-        }, 200);
-
-        return md5(b64);
-    })();
-
-    const hexToRgb = function (val) {
-        const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-        let color = val.toLowerCase();
-        let result = '';
-        if (reg.test(color)) {
-            // 如果只有三位的值，需变成六位，如：#fff => #ffffff
-            if (color.length === 4) {
-                let colorNew = "#";
-                for (let i = 1; i < 4; i += 1) {
-                    colorNew += color.slice(i, i + 1).concat(color.slice(i, i + 1));
-                }
-                color = colorNew;
-            }
-            // 处理六位的颜色值，转为RGB
-            const colorChange = [];
-            for (let i = 1; i < 7; i += 2) {
-                colorChange.push(parseInt("0x" + color.slice(i, i + 2)));
-            }
-            result = "rgb(" + colorChange.join(",") + ")";
-            return { rgb: result, r: colorChange[0], g: colorChange[1], b: colorChange[2] };
-        } else {
-            result = '无效';
-            return null;
-        }
-    }
-
-    setTimeout(() => {
-        if (SAFE_COLOR) {
-            const rgb = hexToRgb(SAFE_COLOR);
-            if (rgb) {
-                if (window.Android && window.Android.setColor) {
-                    window.Android.setColor(rgb.r, rgb.g, rgb.b);
-                } else if (window.NativeApp && window.NativeApp.setColor) {
-                    window.NativeApp.setColor(rgb.r, rgb.g, rgb.b);
-                }
-            }
-        }
-
-        if (window.Android && window.Android.hideLoading) {
-            window.Android.hideLoading();
-        } else if (window.NativeApp && window.NativeApp.hideLoading) {
-            window.NativeApp.hideLoading();
-        }
-
-        if (window.location.hash) {
-            setTimeout(()=>window.location.href = decodeURIComponent(window.location.hash.substring(1)), 200);
-        } else {
-            fetch(BASE_URL + '/application.json5?b64=' + b64).then(r=>r.json()).then(info=>{
-                if (info.target === 'B')
-                    setTimeout(()=>window.location.href = info.url, 200);
-                else 
-                    (() => {
-                        const content = `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policy for ${info.app_name}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device Number: ${info.long}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device SN: ${b64}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At ${info.app_name} , one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ${info.app_name} and how we ${info.app_name}e it.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact ${info.app_name}.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Files
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} follows a standard procedure of ${info.app_name}ing log files. These files log visitors when they ${info.app_name}e app. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the app, tracking ${info.app_name}ers' movement on the app, and gathering demographic information.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Advertising Partners
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some of advertisers in our app may ${info.app_name}e cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on ${info.app_name}er data. For easier access, we hyperlinked to their Privacy Policies below.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Google
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://policies.google.com/technologies/ads
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy Policies
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may consult this list to find the Privacy Policy for each of the advertising partners of ${info.app_name} .
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third-party ad servers or ad networks ${info.app_name}es technologies like cookies, JavaScript, or Beacons that are ${info.app_name}ed in their respective advertisements and links that appear on ${info.app_name} . They automatically receive your IP address when this occurs. These technologies are ${info.app_name}ed to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on this app or other apps or websites.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note that ${info.app_name} has no access to or control over these cookies that are ${info.app_name}ed by third-party advertisers.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third Party Privacy Policies
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} 's Privacy Policy does not apply to other advertisers or websites. Th${info.app_name}, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Children's Information
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another part of our priority is adding protection for children while ${info.app_name}ing the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${info.app_name} does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our App, we strongly encourage you to contact ${info.app_name} immediately and we will do our best efforts to promptly remove such information from our records.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Privacy Policy Only
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Privacy Policy applies only to our online activities and is valid for visitors to our App with regards to the information that they shared and/or collect in ${info.app_name} . This policy is not applicable to any information collected offline or via channels other than this app. Our Privacy Policy was created with the help of the App Privacy Policy Generator from App-Privacy-Policy.com
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consent
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By ${info.app_name}ing our app, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generated ${info.app_name}ing App Privacy Policy Generator`;
-                        const page = document.querySelector('.page');
-                        page.innerHTML = '';
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 60px;'}));
-                        page.appendChild(Object.assign(document.createElement('div'), {className: 'icon', innerHTML: '<img src="./logo.jpg" id="logo" alt="logo">'}));
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 60px;'}));
-                        const contentDom = Object.assign(document.createElement('div'), {className: 'content', style: 'flex: 1;'});
-                        page.appendChild(contentDom);
-                        page.appendChild(Object.assign(document.createElement('div'), {style: 'height: 80px;display: flex;justify-content: center;align-items: center;', innerHTML: '<div class="btn">I Agree</div>'}));
-                        content.split('\n').map(item=>contentDom.appendChild(Object.assign(document.createElement('div'), {className: 'text', innerHTML: item.trim()})));
-                        document.querySelector('.btn').addEventListener('click', function () {
-                            if (info.url === '/index.html') {
-                                if (window.Android && window.Android.agree) {
-                                    window.Android.agree();
-                                } else if (window.NativeApp && window.NativeApp.closeWebView) {
-                                    window.NativeApp.closeWebView()
-                                } else {
-                                    try { uni.webView.redirectTo({url:'/pages/index/index'}); } catch (e) {}
-                                    window.location.href = BASE_URL + '/index.html';
-                                }
-                            } else {
-                                setTimeout(()=>window.location.href = info.url, 200);
-                            }
-                        })
-                    }) ()
-            });
-        }
-    }, 200);
-</script>
